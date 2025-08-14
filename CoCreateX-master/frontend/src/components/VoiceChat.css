@@ -1,0 +1,144 @@
+:root {
+    --primary-color: #4361ee;
+    --error-color: #e63946;
+    --success-color: #4cc9f0;
+    --text-color: #2b2d42;
+    --text-light: #8d99ae;
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --border-color: #e9ecef;
+}
+
+[data-theme='dark'] {
+    --primary-color: #4895ef;
+    --error-color: #ff686b;
+    --success-color: #4cc9f0;
+    --text-color: #f8f9fa;
+    --text-light: #adb5bd;
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --border-color: #2d2d2d;
+}
+
+.voice-chat-container {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.connection-status {
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+.status-connected {
+    color: var(--success-color);
+}
+
+.status-connecting {
+    color: var(--text-light);
+}
+
+.status-error, .status-disconnected {
+    color: var(--error-color);
+}
+
+.active-speakers {
+    margin-bottom: 1.5rem;
+}
+
+.active-speakers h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.speaker-card {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    background-color: var(--bg-color);
+    border-radius: 8px;
+}
+
+.speaker-avatar {
+    width: 36px;
+    height: 36px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.speaker-info {
+    flex-grow: 1;
+}
+
+.speaker-name {
+    font-weight: 500;
+    color: var(--text-color);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.speaking-indicator {
+    width: 10px;
+    height: 10px;
+    background-color: var(--success-color);
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.voice-controls {
+    display: flex;
+    justify-content: center;
+}
+
+.mute-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mute-button:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+.mute-button.muted {
+    background-color: var(--error-color);
+}
+
+.error-alert {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: rgba(230, 57, 70, 0.1);
+    color: var(--error-color);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 0.9rem;
+}
